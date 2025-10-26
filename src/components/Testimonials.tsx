@@ -15,7 +15,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4 md:mb-6 text-white">
             Testimoni
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white">

@@ -21,8 +21,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Nomor WA versi link (tanpa 0, pakai 62)
-  const waDisplay = "0812-3456-7890";
-  const waNumber = "6281234567890";
+  const waDisplay = "085624318915";
+  const waNumber = "6285624318915";
 
   return (
     <footer className="bg-muted/ border-t border-border">
