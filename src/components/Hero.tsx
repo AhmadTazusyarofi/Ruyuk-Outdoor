@@ -54,7 +54,7 @@ const Hero = () => {
               trigger={
                 <Button
                   size="lg"
-                  className="bg-yellow-600 hover:bg-yellow-500 text-foreground shadow-xl w-full sm:w-auto group"
+                  className="bg-yellow-600 hover:bg-yellow-500 text-white shadow-xl w-full sm:w-auto group"
                 >
                   Booking Sekarang
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -67,7 +67,7 @@ const Hero = () => {
               onClick={() => scrollToSection("catalog")}
               className="bg-white/10 hover:bg-white/20 border-white/30 text-white backdrop-blur-sm shadow-xl w-full sm:w-auto"
             >
-              Lihat Alat
+              Lihat Katalog Alat
             </Button>
           </div>
         </div>

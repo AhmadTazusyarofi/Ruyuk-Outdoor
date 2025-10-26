@@ -2,7 +2,7 @@
 import { useState, useCallback } from "react";
 import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { galleryItems } from "../data/gallery";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Gallery = () => {
@@ -29,11 +29,11 @@ const Gallery = () => {
             Gallery
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-            Dokumentasi kegiatan dan perlengkapan Ruyuk Outdoor.
+            Dokumentasi kegiatan event dan perlengkapan Ruyuk Outdoor.
           </p>
         </div>
 
-        {/* Masonry-like grid (tanpa library) */}
+        {/* Grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
           {galleryItems.map((item, i) => (
             <button
@@ -53,29 +53,26 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Lightbox Dialog */}
+        {/* Lightbox (tanpa tombol X) */}
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogOverlay className="bg-black/80 backdrop-blur-sm" />
-          <DialogContent className="max-w-5xl w-[92vw] p-0 overflow-hidden border-0 bg-black">
+          {/* Klik overlay untuk tutup; ESC juga berfungsi */}
+          <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
+
+          <DialogContent
+            className="
+              max-w-5xl w-[92vw] p-0 overflow-hidden
+              bg-transparent border-0 shadow-none
+              [&>button[aria-label='Close']]:hidden  /* sembunyikan close bawaan */
+            "
+          >
             <div className="relative">
               <img
                 src={galleryItems[idx].src}
                 alt={galleryItems[idx].alt ?? "Foto gallery"}
-                className="w-full h-full object-contain max-h-[80vh] bg-black"
+                className="w-full h-full object-contain max-h-[80vh] rounded-2xl"
               />
 
-              {/* Close */}
-              <Button
-                size="icon"
-                variant="secondary"
-                className="absolute top-3 right-3 bg-white/90 hover:bg-white"
-                onClick={() => setOpen(false)}
-                aria-label="Tutup"
-              >
-                <X className="w-5 h-5" />
-              </Button>
-
-              {/* Prev/Next */}
+              {/* Prev / Next */}
               <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2">
                 <Button
                   size="icon"

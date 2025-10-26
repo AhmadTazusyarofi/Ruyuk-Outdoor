@@ -10,16 +10,16 @@ export interface CatalogItem {
 export const catalogData: CatalogItem[] = [
   {
     id: "tenda-dome-2p",
-    name: "Tenda Dome 2P",
+    name: "Tenda Single Layer Kap 2",
     category: "Tenda",
     capacity: "2 Orang",
-    pricePerDay: 40000,
+    pricePerDay: 35000,
     image:
       "https://plus.unsplash.com/premium_photo-1664392108686-8c7c590d1b0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGVuZGElMjBkb21lJTIwa2FwYXNpdGFzJTIwMnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=600",
   },
   {
     id: "tenda-dome-4p",
-    name: "Tenda Dome 4P",
+    name: "Tenda Double Layer Kap 2",
     category: "Tenda",
     capacity: "4 Orang",
     pricePerDay: 65000,
