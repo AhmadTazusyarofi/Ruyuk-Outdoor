@@ -48,7 +48,7 @@ const Footer = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://instagram.com/ruyukoutdoor"
+                href="https://www.instagram.com/ruyuk_outdoor/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white hover:bg-yellow-500 hover:text-primary-foreground transition-smooth"
@@ -124,7 +124,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-white">
-          <p>&copy; {currentYear} Ruyuk Outdoor. All rights reserved.</p>
+          <p>
+            &copy; {currentYear} Ruyuk Outdoor. All rights reserved. <br />
+            Ahmad Tazusyarofi
+          </p>
         </div>
       </div>
     </footer>

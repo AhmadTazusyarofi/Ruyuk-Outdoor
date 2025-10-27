@@ -45,8 +45,8 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-xl mb-8 md:mb-12 text-white/90 max-w-2xl mx-auto">
-            Lengkap. Bersih. Siap Diajak Naik.
-            Fokus pada kebersihan, kelayakan pakai, dan kemudahan proses sewa.
+            Lengkap. Bersih. Siap Diajak Naik. Fokus pada kebersihan, kelayakan
+            pakai, dan kemudahan proses sewa.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -65,7 +65,13 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("catalog")}
-              className="bg-white/10 hover:bg-white/20 border-white/30 text-white backdrop-blur-sm shadow-xl w-full sm:w-auto"
+              className="
+    relative overflow-hidden isolate
+    bg-white/10 text-white backdrop-blur-sm shadow-xl
+    border-white/30 hover:border-none
+    before:-z-10
+    w-full sm:w-auto
+  "
             >
               Lihat Katalog Alat
             </Button>

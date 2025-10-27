@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Info,
+  Package,
+  Images,
+  Star,
+  Phone,
+} from "lucide-react";
 import BookingModal from "@/components/BookingModal";
 import Logo from "@/assets/logo.png";
 
@@ -22,14 +31,15 @@ const Navbar = () => {
     }
   };
 
+  // menu + ikon
   const menuItems = [
-    { label: "Beranda", id: "hero" },
-    { label: "Tentang", id: "about" },
-    { label: "Alat", id: "catalog" },
-    { label: "Gallery", id: "gallery" },
-    { label: "Testimoni", id: "testimonials" },
-    { label: "Kontak", id: "contact" },
-  ];
+    { label: "Beranda", id: "hero", Icon: Home },
+    { label: "Tentang Kami", id: "about", Icon: Info },
+    { label: "Alat", id: "catalog", Icon: Package },
+    { label: "Gallery", id: "gallery", Icon: Images },
+    { label: "Testimoni", id: "testimonials", Icon: Star },
+    { label: "Kontak", id: "contact", Icon: Phone },
+  ] as const;
 
   // === Kelas dinamis ===
   const navBg = isScrolled
@@ -72,14 +82,21 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
+          <div className="hidden md:flex items-center gap-6">
+            {menuItems.map(({ id, label, Icon }) => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`${linkClass} font-medium transition-smooth relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-600 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left`}
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`
+                  group inline-flex items-center gap-2 font-medium transition-smooth
+                  relative ${linkClass}
+                  after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+                  after:bg-yellow-600 after:scale-x-0 after:origin-right after:transition-transform
+                  hover:after:scale-x-100 hover:after:origin-left
+                `}
               >
-                {item.label}
+                <Icon className="w-4 h-4 opacity-90 group-hover:opacity-100" />
+                <span>{label}</span>
               </button>
             ))}
             {/* <BookingModal trigger={<Button size="sm">Booking Sekarang</Button>} /> */}
@@ -102,14 +119,15 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
-              {menuItems.map((item) => (
+            <div className="flex flex-col gap-3">
+              {menuItems.map(({ id, label, Icon }) => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-left ${linkClass} font-medium transition-smooth py-2`}
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className={`text-left ${linkClass} font-medium transition-smooth py-2 flex items-center gap-2`}
                 >
-                  {item.label}
+                  <Icon className="w-4 h-4 opacity-90" />
+                  <span>{label}</span>
                 </button>
               ))}
               {/* <BookingModal

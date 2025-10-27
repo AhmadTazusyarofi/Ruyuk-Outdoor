@@ -15,6 +15,12 @@ import {
 import { MapPin, Clock, Instagram, MessageCircle } from "lucide-react";
 import { catalogData } from "@/data/catalog";
 import { toast } from "@/hooks/use-toast";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const ContactBooking = () => {
   const [formData, setFormData] = useState({
@@ -139,43 +145,100 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
             </p>
 
             <div className="space-y-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1 text-foreground">Alamat</h3>
-                  <p className="text-muted-foreground">
-                    Jl. Kojengkang Desa Geresik, Ciawigebang, Kuningan.
-                  </p>
+              {/* Alamat */}
+              <TooltipProvider delayDuration={150}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://maps.app.goo.gl/gVPriP7AbDQQtnpt5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Buka lokasi Ruyuk Outdoor di Google Maps"
+                      className="group block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-2xl"
+                    >
+                      <div className="flex items-start gap-4 transition-smooth group-hover:translate-x-0.5">
+                        <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-100">
+                          <MapPin className="w-6 h-6 text-yellow-600" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1 text-foreground">
+                            Alamat & Map Lokasi
+                          </h3>
+                          <p className="text-muted-foreground group-hover:text-yellow-600">
+                            Jl. Raya kojengkang Desa Geresik, Blok Wage Sebelah
+                            barat Lapangan Bola, Geresik, Kec. Ciawigebang,
+                            Kabupaten Kuningan, Jawa Barat 45591
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent
+                    side="top"
+                    align="start"
+                    className="bg-black text-white"
+                  >
+                    Klik untuk ke map
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              {/* Jam Operasional */}
+              <div
+                className="group block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-2xl"
+                role="button"
+                tabIndex={0}
+              >
+                <div className="flex items-start gap-4 transition-smooth group-hover:translate-x-0.5">
+                  <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-100">
+                    <Clock className="w-6 h-6 text-yellow-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-foreground">
+                      Jam Operasional
+                    </h3>
+                    <p className="text-muted-foreground group-hover:text-yellow-600">
+                      Senin - Minggu: 09.00 - 20.00 WIB
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1 text-foreground">
-                    Jam Operasional
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Senin - Minggu: 09.00 - 20.00 WIB
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0">
-                  <Instagram className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1 text-foreground">
-                    Sosial Media
-                  </h3>
-                  <p className="text-muted-foreground">@ruyuk_outdoor</p>
-                </div>
-              </div>
+              {/* Instagram (sudah punya efek & link) */}
+              <TooltipProvider delayDuration={150}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://www.instagram.com/ruyuk_outdoor/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Buka Instagram Ruyuk Outdoor"
+                      className="group block cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-2xl"
+                    >
+                      <div className="flex items-start gap-4 transition-smooth group-hover:translate-x-0.5">
+                        <div className="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center flex-shrink-0 group-hover:bg-yellow-100">
+                          <Instagram className="w-6 h-6 text-yellow-600" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1 text-foreground">
+                            Sosial Media
+                          </h3>
+                          <p className="text-muted-foreground group-hover:text-yellow-600">
+                            @ruyuk_outdoor
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent
+                    side="top"
+                    align="start"
+                    className="bg-black text-white"
+                  >
+                    Buka Instagram
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
 
             <Button
@@ -184,8 +247,10 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
               size="lg"
               className="w-full sm:w-auto"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Chat Admin
+              <span className="relative z-10 flex items-center">
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Chat Admin
+              </span>
             </Button>
           </div>
 
@@ -364,7 +429,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-foreground"
+                className="w-full bg-green-700 hover:bg-green-600 text-white"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Kirim via WhatsApp
