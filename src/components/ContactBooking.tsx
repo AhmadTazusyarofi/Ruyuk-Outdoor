@@ -87,8 +87,8 @@ const ContactBooking = () => {
     localStorage.setItem("ruyukBooking", JSON.stringify(formData));
 
     // Format WhatsApp message
-    const nomorToko = "6285624318915"; // Replace with actual store WhatsApp number
-    const pesan = `Halo Ruyuk Outdoor, saya ingin booking:
+    const nomorToko = "6283120451990"; // Replace with actual store WhatsApp number
+    const pesan = `Hallo Ruyuk Outdoor, saya ingin booking:
 
 Nama: ${formData.name}
 WA: ${formData.whatsapp}
@@ -146,9 +146,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
                 <div>
                   <h3 className="font-semibold mb-1 text-foreground">Alamat</h3>
                   <p className="text-muted-foreground">
-                    Jl. Outdoor Adventure No. 123
-                    <br />
-                    Jakarta Selatan, DKI Jakarta
+                    Jl. Kojengkang Desa Geresik, Ciawigebang, Kuningan.
                   </p>
                 </div>
               </div>

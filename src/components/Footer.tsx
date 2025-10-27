@@ -21,8 +21,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Nomor WA versi link (tanpa 0, pakai 62)
-  const waDisplay = "085624318915";
-  const waNumber = "6285624318915";
+  const waDisplay = "083120451990";
+  const waNumber = "6283120451990";
 
   return (
     <footer className="bg-muted/ border-t border-border">
@@ -99,7 +99,7 @@ const Footer = () => {
                 <span>
                   Jl. Kojengkang Desa Geresik.
                   <br />
-                  Ciawigebang, Kuningan
+                  Ciawigebang, Kuningan.
                 </span>
               </li>
               <li className="flex items-center gap-3">
