@@ -118,7 +118,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
   };
 
   const handleChatAdmin = () => {
-    const nomorToko = "6281234567890"; // Replace with actual store WhatsApp number
+    const nomorToko = "6283120451990"; // Replace with actual store WhatsApp number
     const pesan =
       "Halo Ruyuk Outdoor, saya ingin bertanya tentang rental alat outdoor.";
     const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
