@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import Logo from "@/assets/logo.png";
 import { DollarSign, Sparkles, Calendar, Headphones } from "lucide-react";
 
 const About = () => {
@@ -39,7 +40,7 @@ const About = () => {
     <section id="about" className="py-16 md:py-24 bg-white relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Features Grid — lebih naik & tambah jarak bawah */}
-        <div className="relative z-20 -translate-y-24 md:-translate-y-32 lg:-translate-y-44 mb-10 md:mb-10 lg:mb-10">
+        <div className="relative z-20 -translate-y-24 md:-translate-y-32 lg:-translate-y-44 mb-6 md:mb-6 lg:mb-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -63,12 +64,24 @@ const About = () => {
           </div>
         </div>
 
-        {/* Header — tetap rapat tapi ada gap nyaman dari card */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 mt-[-3rem] md:mt-[-4rem] lg:mt-[-6rem]">
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4 md:mb-6 text-foreground">
+        {/* Tentang Kami – Centered Hero */}
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 mt-[-3rem] md:mt-[-4rem] lg:mt-[-6rem]">
+          <div className="inline-flex items-center justify-center">
+            <div className="relative">
+              <img
+                src={Logo}
+                alt="Logo Ruyuk Outdoor"
+                className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain rounded-full bg-white p-3 shadow-xl ring-2 ring-yellow-500/40"
+              />
+              {/* halo */}
+              <div className="absolute inset-0 rounded-full blur-2xl bg-yellow-500/20 -z-10" />
+            </div>
+          </div>
+
+          <h2 className="mt-6 text-3xl sm:text-4xl font-bold text-foreground">
             Tentang Kami
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="mt-3 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             Ruyuk Outdoor menyediakan penyewaan peralatan camping, hiking, dan
             kegiatan alam. Fokus kami pada kebersihan, kelayakan pakai, dan
             kemudahan proses sewa—agar kamu fokus pada perjalanannya.
@@ -76,7 +89,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div className="mt-6 md:mt-8 grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl mx-auto">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600 mb-2">

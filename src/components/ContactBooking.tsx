@@ -126,7 +126,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
   const handleChatAdmin = () => {
     const nomorToko = "6283120451990"; // Replace with actual store WhatsApp number
     const pesan =
-      "Halo Ruyuk Outdoor, saya ingin bertanya tentang rental alat outdoor.";
+      "Halo Ruyuk Outdoor, saya ingin cek stok alat dan bertanya tentang rental alat outdoor.";
     const url = `https://wa.me/${nomorToko}?text=${encodeURIComponent(pesan)}`;
     window.open(url, "_blank");
   };
@@ -137,7 +137,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto ">
           {/* Contact Info */}
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-6 text-foreground">
+            <h2 className="text-3xl sm:text-3xl md:text-3xl font-bold mb-6 text-foreground">
               Kontak & Booking
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground mb-8">
@@ -249,7 +249,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
             >
               <span className="relative z-10 flex items-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
-                Chat Admin
+                Cek Stok & Chat Admin
               </span>
             </Button>
           </div>
@@ -327,7 +327,7 @@ ${formData.notes ? `Catatan: ${formData.notes}` : ""}`;
                         duration: e.target.value,
                       }))
                     }
-                    placeholder="1"
+                    placeholder="0"
                     required
                   />
                 </div>

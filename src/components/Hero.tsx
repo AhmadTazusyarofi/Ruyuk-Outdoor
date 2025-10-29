@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, ArrowBigDownDash, ArrowBigDown, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-mountain.jpg";
 import BookingModal from "@/components/BookingModal";
 
@@ -74,6 +74,7 @@ const Hero = () => {
   "
             >
               Lihat Katalog Alat
+              <ArrowDown className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>

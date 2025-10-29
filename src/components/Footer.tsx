@@ -9,6 +9,7 @@ import {
   Package,
   Star,
   Phone,
+  Images,
 } from "lucide-react";
 import Logo from "@/assets/logo.png";
 
@@ -74,6 +75,7 @@ const Footer = () => {
                 { label: "Beranda", id: "hero", Icon: Home },
                 { label: "Tentang", id: "about", Icon: Info },
                 { label: "Alat", id: "catalog", Icon: Package },
+                { label: "Gallery", id: "gallery", Icon: Images },
                 { label: "Testimoni", id: "testimonials", Icon: Star },
                 { label: "Kontak", id: "contact", Icon: Phone },
               ].map(({ label, id, Icon }) => (
