@@ -48,7 +48,7 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight">
             Sewa Peralatan Outdoor
             <br />
-            <span className="text-yellow-400">
+            <span className="text-yellow-600">
               <ReactTyped
                 strings={["Mudah dan Terjangkau"]}
                 typeSpeed={60}
