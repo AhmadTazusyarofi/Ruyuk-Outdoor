@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, ArrowRight, ArrowBigDownDash, ArrowBigDown, ArrowDown } from "lucide-react";
+import {
+  MapPin,
+  ArrowRight,
+  ArrowBigDownDash,
+  ArrowBigDown,
+  ArrowDown,
+} from "lucide-react";
 import heroImage from "@/assets/hero-mountain.jpg";
 import BookingModal from "@/components/BookingModal";
+import { ReactTyped } from "react-typed";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -41,7 +48,17 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight">
             Sewa Peralatan Outdoor
             <br />
-            <span className="text-yellow-600">Mudah &amp; Terjangkau</span>
+            <span className="text-yellow-400">
+              <ReactTyped
+                strings={["Mudah dan Terjangkau"]}
+                typeSpeed={60}
+                backSpeed={30}
+                backDelay={2200}
+                loop
+                showCursor
+                cursorChar="|"
+              />
+            </span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-xl mb-8 md:mb-12 text-white/90 max-w-2xl mx-auto">

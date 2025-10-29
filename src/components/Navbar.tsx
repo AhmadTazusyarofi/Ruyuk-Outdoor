@@ -47,11 +47,11 @@ const Navbar = () => {
     : "bg-transparent";
 
   // Brand: putih saat di atas, jadi foreground saat scroll
-  const brandClass = isScrolled ? "text-foreground" : "text-white";
+  const brandClass = isScrolled ? "text-black" : "text-white";
 
   // Link menu: putih saat di atas, jadi foreground/80 saat scroll
   const linkClass = isScrolled
-    ? "text-foreground/80 hover:text-yellow-600"
+    ? "text-black hover:text-yellow-600"
     : "text-white hover:text-yellow-400";
 
   // Warna ikon menu mobile juga mengikuti state
@@ -72,7 +72,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Logo Ruyuk Outdoor"
-              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              className="w-12 h-12 md:w-12 md:h-12 object-contain"
               loading="eager"
               decoding="async"
             />
@@ -99,7 +99,6 @@ const Navbar = () => {
                 <span>{label}</span>
               </button>
             ))}
-            {/* <BookingModal trigger={<Button size="sm">Booking Sekarang</Button>} /> */}
           </div>
 
           {/* Mobile Menu Button */}

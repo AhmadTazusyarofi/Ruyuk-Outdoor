@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import Logo from "@/assets/logo.png";
+import { ReactTyped } from "react-typed";
 import { DollarSign, Sparkles, Calendar, Headphones } from "lucide-react";
 
 const About = () => {
@@ -79,7 +80,15 @@ const About = () => {
           </div>
 
           <h2 className="mt-6 text-3xl sm:text-4xl font-bold text-foreground">
-            Tentang Kami
+            <ReactTyped
+              strings={["Tentang Kami"]}
+              typeSpeed={60}
+              backSpeed={30}
+              backDelay={2200}
+              loop
+              showCursor
+              cursorChar="|"
+            />
           </h2>
           <p className="mt-3 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             Ruyuk Outdoor menyediakan penyewaan peralatan camping, hiking, dan
